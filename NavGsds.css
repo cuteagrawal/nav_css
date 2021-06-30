@@ -1,0 +1,53 @@
+body{
+    padding: 0%;
+    margin: 0%;
+}
+
+section{
+    background: green;
+    width: 100%;
+    height: 200px;
+}
+
+#one{
+    background-color: black;
+    width: 100%;
+    height: 200px;
+}
+
+/*Hide the checkbox*/
+#expand_checkbox{
+    display:none;
+}
+
+/*Hide the collapsible content*/
+.expand_menu{
+    visibility: collapse;
+}
+
+/*style the button*/
+#NavButton{
+    display: inline-block;
+    margin-top: 12px;
+    padding: 5px 11px;
+    background-color: yellow;
+    border: 1px solid;
+    border-radius: 3px;
+}
+
+/*Show hidden content on button press*/
+#expand_checkbox:checked ~ * .expand_menu{
+    visibility: visible;
+}
+
+/* text for the button*/
+
+#expand_checkbox:checked ~ #NavButton::before{
+    content: "close";
+} 
+
+/*text for the button when unchecked*/
+
+#expand_checkbox:not(:checked) ~ #NavButton::before{
+    content:"menu"
+}  
